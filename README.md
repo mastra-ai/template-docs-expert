@@ -6,11 +6,11 @@ The agent uses observational memory so it learns what docs and topics you've ask
 
 ## Demo
 
-This demo runs in Mastra Studio, but you can connect this agent to your React, Next.js, or Vue app using the [Mastra Client SDK](https://mastra.ai/docs/server/mastra-client) or agentic UI libraries like [AI SDK UI](https://mastra.ai/guides/build-your-ui/ai-sdk-ui), [CopilotKit](https://mastra.ai/guides/build-your-ui/copilotkit), or [Assistant UI](https://mastra.ai/guides/build-your-ui/assistant-ui).
+This demo runs in Mastra Studio, but you can connect this agent to your React, Next.js, or Vue app using the [Mastra Client SDK](https://mastra.ai/docs/server/mastra-client) or agentic UI libraries like [AI SDK UI](https://mastra.ai/integrations/agentic-ui/ai-sdk-ui), [CopilotKit](https://mastra.ai/integrations/agentic-ui/copilotkit), or [Assistant UI](https://mastra.ai/integrations/agentic-ui/assistant-ui).
 
 ## Prerequisites
 
-- A [Gateway API key](https://mastra.ai/docs/models/gateways/mastra) — proxies to OpenAI, Anthropic, Google, etc. behind a single key.
+- A [Gateway API key](https://mastra.ai/docs/mastra-platform/gateway/quickstart) — proxies to OpenAI, Anthropic, Google, etc. behind a single key.
 - A [Turso](https://turso.tech) database (URL + auth token) for storage. A free dev tier is fine; in-memory libSQL works too if you swap the URL to `:memory:`.
 
 ## Quickstart 🚀
@@ -25,6 +25,10 @@ Ask things like:
 - "What's the current API for `openai.tools.webSearch()` in `@ai-sdk/openai`?"
 - "Compare pgvector HNSW vs IVFFlat indexes for cosine similarity."
 - "What changed in Node 22 LTS vs 20 LTS?"
+
+## Optional WebRouter search and page extraction
+
+**Local/container use only; Mastra Platform deployment is unverified.** Set `DOCS_WEB_PROVIDER=webrouter` to use the local Python MCP server for search and explicit page reads. Gateway remains the agent inference layer. See [setup and comparison](docs/webrouter.md) for prerequisites, credentials, deployment constraints, and a reproducible comparison with the default search.
 
 ## Making it yours
 

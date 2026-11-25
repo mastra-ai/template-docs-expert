@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "mastra dev",
     "build": "mastra build",
-    "start": "mastra start"
+    "start": "mastra start",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc",
+    "compare": "node --import tsx --env-file=.env scripts/compare-web.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +23,7 @@
     "@mastra/editor": "latest",
     "@mastra/libsql": "latest",
     "@mastra/loggers": "latest",
+    "@mastra/mcp": "^2.11.0",
     "@mastra/memory": "latest",
     "@mastra/observability": "latest",
     "zod": "^4.3.6"
@@ -28,6 +32,7 @@
     "@types/node": "^24.10.9",
     "dotenv": "^17.3.1",
     "mastra": "latest",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3"
   }
 }
